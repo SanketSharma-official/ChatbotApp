@@ -17,7 +17,7 @@ export default function Register() {
     try {
       const response = await register({ username, email, password });
       storeUserData(response.data.token, response.data.userId);
-      router.push('/chat');
+      router.push('/'); // Redirect to the main chat page (root)
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed.');
     }

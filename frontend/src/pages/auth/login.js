@@ -16,7 +16,7 @@ export default function Login() {
     try {
       const response = await login({ email, password });
       storeUserData(response.data.token, response.data.userId);
-      router.push('/chat');
+      router.push('/'); // Redirect to the main chat page (root)
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please check your credentials.');
     }
